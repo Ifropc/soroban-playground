@@ -6,7 +6,7 @@ pub struct Contract;
 #[contractimpl]
 impl Contract {
     pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
-        vec![&env, symbol!("Hello"), to]
+        Vec::from_array(&env, [symbol!("Hello"), to])
     }
 }
 
